@@ -20,11 +20,13 @@
                 <a href="{{ '/' | relative_url }}">{{ site.title | default: "CyberSecure Podcast" }}</a>
             </div>
             <nav>
-                <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-                <a href="{{ '/episodes/' | relative_url }}" {% if page.url contains "/episodes/" %}class="active"{% endif %}>Episodes</a>
-                <a href="{{ '/about/' | relative_url }}" {% if page.url == "/about/" or page.url == "/about.html" %}class="active"{% endif %}>About</a>
-                <a href="{{ '/contact/' | relative_url }}" {% if page.url == "/contact/" or page.url == "/contact.html" %}class="active"{% endif %}>Contact</a>
-            </nav>
+    <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+    <a href="{{ '/episodes/' | relative_url }}" {% if page.url contains "/episodes" %}class="active"{% endif %}>Episodes</a>
+    <a href="{{ '/about/' | relative_url }}" {% if page.url contains "/about" %}class="active"{% endif %}>About</a>
+    <a href="{{ '/contact/' | relative_url }}" {% if page.url contains "/contact" %}class="active"{% endif %}>Contact</a>
+</nav>
+
+
             <div class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
