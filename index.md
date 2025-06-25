@@ -23,7 +23,7 @@ title: Home
         {% if latest_post %}
         <div class="episode-card featured">
             <div class="episode-content">
-                <h3><a href="{{ latest_post.url }}">{{ latest_post.title }}</a></h3>
+                <h3><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h3>
                 <div class="episode-meta">
                     <span class="episode-number">Episode {{ latest_post.episode_number }}</span>
                     <span class="episode-date">{{ latest_post.date | date: "%B %d, %Y" }}</span>
@@ -41,7 +41,7 @@ title: Home
                 {% endif %}
                 
                 <div class="episode-actions">
-                    <a href="{{ latest_post.url }}" class="btn btn-primary">Full Episode</a>
+                    <a href="{{ latest_post.url | relative_url }}" class="btn btn-primary">Full Episode</a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@ title: Home
             {% for post in site.posts limit: 6 %}
             <div class="episode-card">
                 <div class="episode-content">
-                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
                     <div class="episode-meta">
                         <span class="episode-number">Episode {{ post.episode_number }}</span>
                         <span class="episode-date">{{ post.date | date: "%b %d" }}</span>
@@ -65,7 +65,7 @@ title: Home
                     </div>
                     <p class="episode-description">{{ post.description | truncate: 100 }}</p>
                     <div class="episode-actions">
-                        <a href="{{ post.url }}" class="btn btn-primary btn-sm">Listen</a>
+                        <a href="{{ post.url | relative_url }}" class="btn btn-primary btn-sm">Listen</a>
                     </div>
                 </div>
             </div>
