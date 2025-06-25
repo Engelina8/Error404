@@ -1,0 +1,40 @@
+---
+layout: default
+title: All Episodes
+description: Browse all episodes of CyberSecure Podcast covering various cybersecurity topics and threats.
+---
+
+<section class="page-header">
+    <div class="container">
+        <h1>All Episodes</h1>
+        <p>Explore our complete collection of cybersecurity discussions</p>
+    </div>
+</section>
+
+<section class="episodes-list">
+    <div class="container">
+        <div class="episodes-grid">
+            {% for post in site.posts %}
+            <div class="episode-card">
+                <div class="episode-number">{{ post.episode_number | default: "Episode" }}</div>
+                <div class="episode-content">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+                    <div class="episode-meta">
+                        <span><i class="fas fa-calendar"></i> {{ post.date | date: "%B %d, %Y" }}</span>
+                        <span><i class="fas fa-clock"></i> {{ post.duration | default: "45 minutes" }}</span>
+                    </div>
+                    <div class="episode-actions">
+                        <button class="btn btn-play btn-sm">
+                            <i class="fas fa-play"></i> Play
+                        </button>
+                        <a href="{{ post.url | relative_url }}" class="btn btn-outline btn-sm">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

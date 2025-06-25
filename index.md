@@ -1,57 +1,41 @@
 ---
 layout: default
-title: CyberSec Pulse - The Podcast
-logo: CyberSec Pulse_
 ---
 
 <section class="hero">
     <div class="container">
-        <h1 data-text="DECODING THE DIGITAL FRONTIER">DECODING THE DIGITAL FRONTIER</h1>
-        <p>A weekly podcast breaking down the latest threats, trends, and technologies in cybersecurity. Made by students, for everyone.</p>
-        <a href="#player-section" class="cta-button">Listen to Latest Episode</a>
-    </div>
-</section>
-
-<section id="player-section" class="player-container">
-    <div class="container">
-        <h2>Now Playing</h2>
-        <div class="audio-player">
-            <audio id="audio-player" src="placeholder.mp3"></audio>
-            <div class="player-info">
-                <h3 id="episode-title">Select an episode to begin</h3>
-                <p id="episode-number">Episode #00</p>
-            </div>
-            <div class="player-controls">
-                <button id="play-pause-btn" class="control-btn"><i class="fas fa-play"></i></button>
-                <div class="progress-bar-container">
-                    <div id="progress-bar" class="progress-bar"></div>
-                </div>
-                <div class="time-display">
-                    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
-                </div>
+        <div class="hero-content">
+            <h1>Welcome to CyberSecure Podcast</h1>
+            <p class="hero-subtitle">A student project exploring cybersecurity topics, threats, and solutions</p>
+            <div class="hero-buttons">
+                <a href="/episodes/" class="btn btn-primary">Listen Now</a>
+                <a href="/about/" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
     </div>
 </section>
 
-<section id="episodes" class="episodes-list">
+<section class="latest-episode">
     <div class="container">
-        <h2>All Episodes</h2>
-        <ul>
-            {% for episode in site.data.episodes %}
-            <li class="episode-item" data-src="{{ episode.src }}" data-title="{{ episode.title }}" data-episode="{{ episode.episode }}">
-                <span class="ep-number">Ep. {{ episode.episode }}</span>
-                <span class="ep-title">{{ episode.title }}</span>
-                <button class="play-episode-btn"><i class="fas fa-play"></i> Play</button>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-</section>
-
-<section id="about" class="about-section">
-    <div class="container">
-        <h2>About The Project</h2>
-        <p>CyberSec Pulse is a final project for our Introduction to Information Security course. We aim to make complex cybersecurity topics accessible and engaging for everyone, from tech enthusiasts to everyday internet users. Join us as we explore the ever-evolving world of digital defense.</p>
+        <h2>Latest Episode</h2>
+        <div class="episode-card featured">
+            <div class="episode-number">Episode 01</div>
+            <div class="episode-content">
+                <h3>Introduction to Cybersecurity Fundamentals</h3>
+                <p>Building a strong foundation in cybersecurity concepts and understanding the threat landscape.</p>
+                <div class="episode-meta">
+                    <span><i class="fas fa-calendar"></i> December 15, 2023</span>
+                    <span><i class="fas fa-clock"></i> 45 minutes</span>
+                </div>
+                <div class="episode-actions">
+                    <button class="btn btn-play">
+                        <i class="fas fa-play"></i> Play Episode
+                    </button>
+                    <a href="/episodes/episode-01/" class="btn btn-outline">
+                        <i class="fas fa-info-circle"></i> Episode Details
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
