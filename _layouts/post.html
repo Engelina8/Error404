@@ -15,27 +15,26 @@ layout: default
         </div>
 
         <!-- SoundCloud Player -->
-        {% if page.soundcloud_url %}
-        <div class="episode-player soundcloud-player">
-            <iframe 
-                width="100%" 
-                height="166" 
-                scrolling="no" 
-                frameborder="no" 
-                src="{{ page.soundcloud_url }}&color=%2316d47b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
-            </iframe>
+        <!-- Click to Play SoundCloud Player -->
+{% if page.soundcloud_url or page.soundcloud_track_id %}
+<div class="episode-player soundcloud-player">
+    <div class="player-placeholder" id="player-{{ forloop.index0 | default: 'single' }}">
+        <div class="player-placeholder-content">
+            <div class="play-button">
+                <i class="fas fa-play"></i>
+            </div>
+            <h4>{{ page.title }}</h4>
+            <p>Click to load and play the episode</p>
+            <button class="btn btn-primary load-player-btn" 
+                    data-soundcloud-url="{% if page.soundcloud_url %}{{ page.soundcloud_url }}{% else %}https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.soundcloud_track_id }}{% endif %}"
+                    data-target="player-{{ forloop.index0 | default: 'single' }}">
+                <i class="fas fa-headphones"></i> Load Player
+            </button>
         </div>
-        {% elsif page.soundcloud_track_id %}
-        <div class="episode-player soundcloud-player">
-            <iframe 
-                width="100%" 
-                height="166" 
-                scrolling="no" 
-                frameborder="no" 
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.soundcloud_track_id }}&color=%2316d47b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
-            </iframe>
-        </div>
-        {% endif %}
+    </div>
+</div>
+{% endif %}
+
 
         <!-- Episode Description -->
         {% if page.description %}
