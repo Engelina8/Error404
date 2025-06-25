@@ -1,3 +1,19 @@
-title: Your Podcast Site
-description: A site for my podcasts
-theme: minima
+title: "Your Cybersecurity Podcast"
+description: "Exploring cybersecurity topics for everyone"
+url: "http://localhost:4000" # Change this for production
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Plugins (if using GitHub Pages)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Jekyll configuration
+sass:
+  sass_dir: _sass
+  style: compressed

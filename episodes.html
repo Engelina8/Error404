@@ -1,52 +1,34 @@
 ---
-layout: default
+layout: page
 title: All Episodes
-permalink: /episodes/
 ---
 
-<section class="page-header">
-    <div class="container">
-        <h1>All Episodes</h1>
-        <p>Explore our cybersecurity discussions</p>
-    </div>
-</section>
-
-<section class="episodes-list">
-    <div class="container">
-        <div class="episodes-grid">
-            <div class="episode-card">
-                <div class="episode-number">Episode 01</div>
-                <div class="episode-content">
-                    <h3>Introduction to Cybersecurity Fundamentals</h3>
-                    <p>Building a strong foundation in cybersecurity concepts and understanding the threat landscape.</p>
-                    <div class="episode-meta">
-                        <span><i class="fas fa-calendar"></i> December 15, 2023</span>
-                        <span><i class="fas fa-clock"></i> 45 minutes</span>
-                    </div>
-                    <div class="episode-actions">
-                        <button class="btn btn-play btn-sm">
-                            <i class="fas fa-play"></i> Play
-                        </button>
-                    </div>
+<div class="episodes-archive">
+    <div class="episodes-grid">
+        {% for post in site.posts %}
+        <div class="episode-card">
+            <div class="episode-content">
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <div class="episode-meta">
+                    <span class="episode-number">Episode {{ post.episode_number }}</span>
+                    <span class="episode-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                    <span class="episode-duration">{{ post.duration }}</span>
                 </div>
-            </div>
-            
-            <div class="episode-card">
-                <div class="episode-number">Episode 02</div>
-                <div class="episode-content">
-                    <h3>Password Security and Best Practices</h3>
-                    <p>Deep dive into password security, common attacks, and how to protect yourself.</p>
-                    <div class="episode-meta">
-                        <span><i class="fas fa-calendar"></i> December 22, 2023</span>
-                        <span><i class="fas fa-clock"></i> 38 minutes</span>
-                    </div>
-                    <div class="episode-actions">
-                        <button class="btn btn-play btn-sm">
-                            <i class="fas fa-play"></i> Play
-                        </button>
-                    </div>
+                <p class="episode-description">{{ post.description }}</p>
+                
+                {% if post.tags %}
+                <div class="episode-tags">
+                    {% for tag in post.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <div class="episode-actions">
+                    <a href="{{ post.url }}" class="btn btn-primary btn-sm">Listen</a>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-</section>
+</div>
