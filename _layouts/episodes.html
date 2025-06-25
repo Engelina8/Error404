@@ -1,0 +1,105 @@
+---
+layout: default
+title: Episodes
+description: Browse all episodes of CyberSecure Podcast covering various cybersecurity topics and discussions.
+---
+
+<section class="episodes-header">
+    <div class="container">
+        <h1>All Episodes</h1>
+        <p>Explore our growing collection of cybersecurity discussions and insights.</p>
+    </div>
+</section>
+
+<section class="episodes-content">
+    <div class="container">
+        <div class="episodes-filters">
+            <div class="search-box">
+                <input type="text" id="episode-search" placeholder="Search episodes...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-tags">
+                <button class="filter-tag active" data-filter="all">All</button>
+                <button class="filter-tag" data-filter="fundamentals">Fundamentals</button>
+                <button class="filter-tag" data-filter="threats">Threats</button>
+                <button class="filter-tag" data-filter="tools">Tools</button>
+                <button class="filter-tag" data-filter="best-practices">Best Practices</button>
+            </div>
+        </div>
+
+        <div class="episodes-grid">
+            <!-- Episode 1 -->
+            <div class="episode-card" data-tags="fundamentals best-practices">
+                <div class="episode-number">Episode 01</div>
+                <div class="episode-content">
+                    <h3>Introduction to Cybersecurity Fundamentals</h3>
+                    <p class="episode-date"><i class="fas fa-calendar"></i> December 15, 2023</p>
+                    <p class="episode-duration"><i class="fas fa-clock"></i> 45 minutes</p>
+                    <p class="episode-description">In our inaugural episode, we explore the basics of cybersecurity, discuss common threats, and introduce key concepts every digital citizen should know.</p>
+                    <div class="episode-topics">
+                        <span class="topic-tag">Fundamentals</span>
+                        <span class="topic-tag">Best Practices</span>
+                    </div>
+                    <div class="episode-actions">
+                        <button class="btn btn-play" data-episode="1">
+                            <i class="fas fa-play"></i> Play
+                        </button>
+                        <a href="/episodes/episode-01/" class="btn btn-outline">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Episode 2 -->
+            <div class="episode-card" data-tags="threats malware">
+                <div class="episode-number">Episode 02</div>
+                <div class="episode-content">
+                    <h3>Understanding Malware: Types and Prevention</h3>
+                    <p class="episode-date"><i class="fas fa-calendar"></i> December 22, 2023</p>
+                    <p class="episode-duration"><i class="fas fa-clock"></i> 38 minutes</p>
+                    <p class="episode-description">A deep dive into different types of malware, how they work, and effective strategies for prevention and detection.</p>
+                    <div class="episode-topics">
+                        <span class="topic-tag">Threats</span>
+                        <span class="topic-tag">Malware</span>
+                    </div>
+                    <div class="episode-actions">
+                        <button class="btn btn-play" data-episode="2">
+                            <i class="fas fa-play"></i> Play
+                        </button>
+                        <a href="/episodes/episode-02/" class="btn btn-outline">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Episode 3 -->
+            <div class="episode-card" data-tags="fundamentals tools">
+                <div class="episode-number">Episode 03</div>
+                <div class="episode-content">
+                    <h3>Password Managers: Your Digital Keychain</h3>
+                    <p class="episode-date"><i class="fas fa-calendar"></i> December 29, 2023</p>
+                    <p class="episode-duration"><i class="fas fa-clock"></i> 42 minutes</p>
+                    <p class="episode-description">Why password managers are essential, how to choose the right one, and best practices for password security in the digital age.</p>
+                    <div class="episode-topics">
+                        <span class="topic-tag">Tools</span>
+                        <span class="topic-tag">Best Practices</span>
+                    </div>
+                    <div class="episode-actions">
+                        <button class="btn btn-play" data-episode="3">
+                            <i class="fas fa-play"></i> Play
+                        </button>
+                        <a href="/episodes/episode-03/" class="btn btn-outline">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="load-more">
+            <button class="btn btn-secondary">Load More Episodes</button>
+        </div>
+    </div>
+</section>

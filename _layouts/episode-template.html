@@ -1,0 +1,291 @@
+---
+layout: default
+---
+
+<section class="episode-header">
+    <div class="container">
+        <div class="episode-meta">
+            <span class="episode-number">{{ page.episode_number }}</span>
+            <span class="episode-date">{{ page.date | date: "%B %d, %Y" }}</span>
+            <span class="episode-duration">{{ page.duration }}</span>
+        </div>
+        <h1>{{ page.title }}</h1>
+        <p class="episode-subtitle">{{ page.subtitle }}</p>
+        
+        <div class="episode-player">
+            <div class="player-controls">
+                <button class="btn-play-large" data-episode="{{ page.episode_number }}">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="player-info">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="time-info">
+                        <span class="current-time">0:00</span>
+                        <span class="total-time">{{ page.duration }}</span>
+                    </div>
+                </div>
+                <div class="player-volume">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" class="volume-slider" min="0" max="100" value="80">
+                </div>
+            </div>
+        </div>
+        
+        <div class="episode-actions">
+            <button class="btn btn-secondary">
+                <i class="fas fa-download"></i> Download
+            </button>
+            <button class="btn btn-secondary">
+                <i class="fas fa-share"></i> Share
+            </button>
+            <button class="btn btn-secondary">
+                <i class="fas fa-bookmark"></i> Bookmark
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="episode-content">
+    <div class="container">
+        <div class="content-grid">
+            <div class="main-content">
+                <div class="episode-description">
+                    <h2>About This Episode</h2>
+                    {{ content }}
+                </div>
+                
+                {% if page.topics %}
+                <div class="episode-topics">
+                    <h3>Topics Covered</h3>
+                    <ul>
+                    {% for topic in page.topics %}
+                        <li>{{ topic }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                
+                {% if page.resources %}
+                <div class="episode-resources">
+                    <h3>Resources & Links</h3>
+                    <ul>
+                    {% for resource in page.resources %}
+                        <li><a href="{{ resource.url }}" target="_blank">{{ resource.title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                
+                <div class="episode-transcript">
+                    <h3>Transcript</h3>
+                    <button class="btn btn-outline" id="toggle-transcript">Show Transcript</button>
+                    <div class="transcript-content" style="display: none;">
+                        <p><em>Transcript will be available soon...</em></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="episode-info-card">
+                    <h3>Episode Info</h3>
+                    <ul>
+                        <li><strong>Published:</strong> {{ page.date | date: "%B %d, %Y" }}</li>
+                        <li><strong>Duration:</strong> {{ page.duration }}</li>
+                        <li><strong>File Size:</strong> {{ page.file_size | default: "25.2 MB" }}</li>
+                        <li><strong>Format:</strong> MP3</li>
+                    </ul>
+                </div>
+                
+                {% if page.hosts %}
+                <div class="hosts-card">
+                    <h3>Hosts</h3>
+                    {% for host in page.hosts %}
+                    <div class="host-info">
+                        <strong>{{ host.name }}</strong>
+                        <p>{{ host.role }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <div class="subscribe-card">
+                    <h3>Subscribe</h3>
+                    <div class="subscribe-links-vertical">
+                        <a href="#" class="subscribe-link">
+                            <i class="fab fa-spotify"></i> Spotify
+                        </a>
+                        <a href="#" class="subscribe-link">
+                            <i class="fab fa-apple"></i> Apple Podcasts
+                        </a>
+                        <a href="#" class="subscribe-link">
+                            <i class="fab fa-google"></i> Google Podcasts
+                        </a>
+                        <a href="#" class="subscribe-link">
+                            <i class="fas fa-rss"></i> RSS Feed
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="related-episodes">
+    <div class="container">
+        <h2>Related Episodes</h2>
+        <div class="episodes-grid">
+            <!-- Related Episode 1 -->
+            <div class="episode-card related">
+                <div class="episode-number">Episode 02</div>
+                <div class="episode-content">
+                    <h3>Understanding Malware: Types and Prevention</h3>
+                    <p class="episode-date"><i class="fas fa-calendar"></i> December 22, 2023</p>
+                    <p class="episode-duration"><i class="fas fa-clock"></i> 38 minutes</p>
+                    <div class="episode-topics">
+                        <span class="topic-tag">Threats</span>
+                        <span class="topic-tag">Malware</span>
+                    </div>
+                    <div class="episode-actions">
+                        <button class="btn btn-play btn-sm" data-episode="2">
+                            <i class="fas fa-play"></i> Play
+                        </button>
+                        <a href="/episodes/episode-02/" class="btn btn-outline btn-sm">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Episode 2 -->
+            <div class="episode-card related">
+                <div class="episode-number">Episode 03</div>
+                <div class="episode-content">
+                    <h3>Password Managers: Your Digital Keychain</h3>
+                    <p class="episode-date"><i class="fas fa-calendar"></i> December 29, 2023</p>
+                    <p class="episode-duration"><i class="fas fa-clock"></i> 42 minutes</p>
+                    <div class="episode-topics">
+                        <span class="topic-tag">Tools</span>
+                        <span class="topic-tag">Best Practices</span>
+                    </div>
+                    <div class="episode-actions">
+                        <button class="btn btn-play btn-sm" data-episode="3">
+                            <i class="fas fa-play"></i> Play
+                        </button>
+                        <a href="/episodes/episode-03/" class="btn btn-outline btn-sm">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-all-episodes">
+            <a href="/episodes/" class="btn btn-primary">
+                <i class="fas fa-list"></i> View All Episodes
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="episode-comments">
+    <div class="container">
+        <h2>Discussion</h2>
+        <div class="comments-section">
+            <div class="comment-form">
+                <h3>Share your thoughts</h3>
+                <form id="comment-form">
+                    <div class="form-group">
+                        <label for="comment-name">Name</label>
+                        <input type="text" id="comment-name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-email">Email (not published)</label>
+                        <input type="email" id="comment-email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-message">Comment</label>
+                        <textarea id="comment-message" name="message" rows="4" placeholder="What did you think of this episode?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-comment"></i> Post Comment
+                    </button>
+                </form>
+            </div>
+            
+            <div class="existing-comments">
+                <h3>Comments</h3>
+                <div class="comment">
+                    <div class="comment-header">
+                        <strong>Sarah M.</strong>
+                        <span class="comment-date">2 days ago</span>
+                    </div>
+                    <p>Great episode! Really helped me understand the basics. Looking forward to the next one.</p>
+                    <div class="comment-actions">
+                        <button class="btn-link"><i class="fas fa-thumbs-up"></i> 5</button>
+                        <button class="btn-link"><i class="fas fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-header">
+                        <strong>Mike Chen</strong>
+                        <span class="comment-date">1 week ago</span>
+                    </div>
+                    <p>As a fellow cybersecurity student, I appreciate how you break down complex topics. The examples were really helpful!</p>
+                    <div class="comment-actions">
+                        <button class="btn-link"><i class="fas fa-thumbs-up"></i> 8</button>
+                        <button class="btn-link"><i class="fas fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+                
+                <div class="load-more-comments">
+                    <button class="btn btn-secondary">Load More Comments</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="episode-navigation">
+    <div class="container">
+        <div class="nav-buttons">
+            {% if page.previous_episode %}
+            <a href="{{ page.previous_episode.url }}" class="nav-btn prev-episode">
+                <i class="fas fa-chevron-left"></i>
+                <div class="nav-content">
+                    <span class="nav-label">Previous Episode</span>
+                    <span class="nav-title">{{ page.previous_episode.title }}</span>
+                </div>
+            </a>
+            {% endif %}
+            
+            {% if page.next_episode %}
+            <a href="{{ page.next_episode.url }}" class="nav-btn next-episode">
+                <div class="nav-content">
+                    <span class="nav-label">Next Episode</span>
+                    <span class="nav-title">{{ page.next_episode.title }}</span>
+                </div>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="newsletter-signup">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2>Stay Updated</h2>
+            <p>Get notified when new episodes are released and receive exclusive cybersecurity tips.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Subscribe
+                </button>
+            </form>
+            <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </div>
+</section>
