@@ -8,8 +8,8 @@ layout: default
             <h1>Welcome to CyberSecure Podcast</h1>
             <p class="hero-subtitle">A student project exploring cybersecurity topics, threats, and solutions</p>
             <div class="hero-buttons">
-                <a href="/episodes/" class="btn btn-primary">Listen Now</a>
-                <a href="/about/" class="btn btn-secondary">Learn More</a>
+                <a href="{{ '/episodes/' | relative_url }}">Listen Now</a>
+                <a href="{{ '/about/' | relative_url }}" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
     </div>
