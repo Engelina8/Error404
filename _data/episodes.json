@@ -1,0 +1,17 @@
+[
+    {
+        "src": "audio/episode1.mp3",
+        "title": "The Rise of AI in Phishing Attacks",
+        "episode": "01"
+    },
+    {
+        "src": "audio/episode2.mp3",
+        "title": "Understanding Zero-Day Exploits",
+        "episode": "02"
+    },
+    {
+        "src": "audio/episode3.mp3",
+        "title": "Securing Your Home Network",
+        "episode": "03"
+    }
+]

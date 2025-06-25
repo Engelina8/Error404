@@ -1,9 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>{{ page.title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <!-- Google Fonts: Roboto (for body) and Roboto Mono (for headings) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    {{ content }}
+    <header>
+        <div class="container">
+            <div class="logo">{{ site.logo }}</div>
+            <nav>
+                <a href="#episodes">Episodes</a>
+                <a href="#about">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2023 {{ site.title }}. A Student Project.</p>
+        </div>
+    </footer>
+
+    <!-- Your Custom JavaScript -->
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>
