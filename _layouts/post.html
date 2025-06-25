@@ -14,14 +14,26 @@ layout: default
             </div>
         </div>
 
-        <!-- Audio Player -->
-        {% if page.audio_file %}
-        <div class="episode-player">
-            <audio controls class="audio-player">
-                <source src="{{ page.audio_file }}" type="audio/mpeg">
-                <source src="{{ page.audio_file | replace: '.mp3', '.ogg' }}" type="audio/ogg">
-                Your browser does not support the audio element.
-            </audio>
+        <!-- SoundCloud Player -->
+        {% if page.soundcloud_url %}
+        <div class="episode-player soundcloud-player">
+            <iframe 
+                width="100%" 
+                height="166" 
+                scrolling="no" 
+                frameborder="no" 
+                src="{{ page.soundcloud_url }}&color=%2316d47b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+            </iframe>
+        </div>
+        {% elsif page.soundcloud_track_id %}
+        <div class="episode-player soundcloud-player">
+            <iframe 
+                width="100%" 
+                height="166" 
+                scrolling="no" 
+                frameborder="no" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.soundcloud_track_id }}&color=%2316d47b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+            </iframe>
         </div>
         {% endif %}
 
@@ -37,6 +49,15 @@ layout: default
         <div class="episode-content">
             {{ content }}
         </div>
+
+        <!-- SoundCloud Direct Link -->
+        {% if page.soundcloud_direct_url %}
+        <div class="episode-links">
+            <a href="{{ page.soundcloud_direct_url }}" target="_blank" class="btn btn-soundcloud">
+                🎵 Listen on SoundCloud
+            </a>
+        </div>
+        {% endif %}
 
         <!-- Episode Navigation -->
         <div class="episode-navigation">

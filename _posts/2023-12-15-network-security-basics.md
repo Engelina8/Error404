@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "Network Security Basics for Everyone"
-episode_number: 3
-duration: "28:15"
-audio_file: "/assets/audio/episode-003.mp3"
-description: "Understanding how networks work and how to protect yourself on public WiFi, at home, and at work."
-tags: [networking, wifi, security]
+title: "Welcome to Cybersecurity Basics"
+episode_number: 1
+duration: "25:30"
+soundcloud_url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/YOUR_TRACK_ID_HERE"
+soundcloud_direct_url: "https://soundcloud.com/your-username/welcome-to-cybersecurity-basics"
+description: "Welcome to our cybersecurity podcast! In this first episode, we introduce ourselves and discuss why cybersecurity matters for everyone."
+tags: [introduction, basics]
 ---
+
 
 # Network Security Fundamentals
 

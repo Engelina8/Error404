@@ -1,36 +1,105 @@
 ---
 layout: default
-title: All Episodes
-description: Browse all episodes of CyberSecure Podcast covering various cybersecurity topics and threats.
+title: Home
 ---
 
-<section class="page-header">
+<!-- Hero Section -->
+<section class="hero">
     <div class="container">
-        <h1>All Episodes</h1>
-        <p>Explore our complete collection of cybersecurity discussions</p>
+        <h1 class="glitch">SecureCast</h1>
+        <p>Cybersecurity insights for the digital age</p>
+        <div class="hero-buttons">
+            <a href="#latest" class="btn btn-primary">Listen Now</a>
+            <a href="/about/" class="btn btn-secondary">About Us</a>
+        </div>
     </div>
 </section>
 
+<!-- Latest Episode -->
+<section id="latest" class="latest-episode">
+    <div class="container">
+        <h2>Latest Episode</h2>
+        {% assign latest_post = site.posts.first %}
+        {% if latest_post %}
+        <div class="episode-card featured">
+            <div class="episode-content">
+                <h3><a href="{{ latest_post.url }}">{{ latest_post.title }}</a></h3>
+                <div class="episode-meta">
+                    <span class="episode-number">Episode {{ latest_post.episode_number }}</span>
+                    <span class="episode-date">{{ latest_post.date | date: "%B %d, %Y" }}</span>
+                    <span class="episode-duration">{{ latest_post.duration }}</span>
+                </div>
+                <p class="episode-description">{{ latest_post.description }}</p>
+                
+                <!-- SoundCloud Player for Latest Episode -->
+                {% if latest_post.soundcloud_url %}
+                <div class="episode-player soundcloud-player">
+                    <iframe 
+                        width="100%" 
+                        height="166" 
+                        scrolling="no" 
+                        frameborder="no" 
+                        src="{{ latest_post.soundcloud_url }}&color=%2316d47b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+                    </iframe>
+                </div>
+                {% elsif latest_post.soundcloud_track_id %}
+                <div class="episode-player soundcloud-player">
+                    <iframe 
+                        width="100%" 
+                        height="166" 
+                        scrolling="no" 
+                        frameborder="no" 
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ latest_post.soundcloud_track_id }}&color=%2316d47b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+                    </iframe>
+                </div>
+                {% endif %}
+                
+                <div class="episode-actions">
+                    <a href="{{ latest_post.url }}" class="btn btn-primary">Full Episode</a>
+                    {% if latest_post.soundcloud_direct_url %}
+                    <a href="{{ latest_post.soundcloud_direct_url }}" target="_blank" class="btn btn-soundcloud">SoundCloud</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- All Episodes -->
 <section class="episodes-list">
     <div class="container">
+        <h2>All Episodes</h2>
         <div class="episodes-grid">
-            {% for post in site.posts %}
+            {% for post in site.posts limit: 6 %}
             <div class="episode-card">
-                <div class="episode-number">{{ post.episode_number | default: "Episode" }}</div>
                 <div class="episode-content">
-                    <h3>{{ post.title }}</h3>
-                    <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                     <div class="episode-meta">
-                        <span><i class="fas fa-calendar"></i> {{ post.date | date: "%B %d, %Y" }}</span>
-                        <span><i class="fas fa-clock"></i> {{ post.duration | default: "45 minutes" }}</span>
+                        <span class="episode-number">Episode {{ post.episode_number }}</span>
+                        <span class="episode-date">{{ post.date | date: "%b %d" }}</span>
+                        <span class="episode-duration">{{ post.duration }}</span>
                     </div>
+                    <p class="episode-description">{{ post.description | truncate: 100 }}</p>
+                    
+                    <!-- Mini SoundCloud Player -->
+                    {% if post.soundcloud_url %}
+                    <div class="mini-player">
+                        <iframe 
+                            width="100%" 
+                            height="120" 
+                            scrolling="no" 
+                            frameborder="no" 
+                            src="{{ post.soundcloud_url }}&color=%2316d47b&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
+                        </iframe>
+                    </div>
+                    {% endif %}
+                    
                     <div class="episode-actions">
-                        <button class="btn btn-play btn-sm">
-                            <i class="fas fa-play"></i> Play
-                        </button>
-                        <a href="{{ post.url | relative_url }}" class="btn btn-outline btn-sm">
-                            <i class="fas fa-info-circle"></i> Details
-                        </a>
+                        <a href="{{ post.url }}" class="btn btn-primary btn-sm">Full Episode</a>
+                        {% if post.soundcloud_direct_url %}
+                        <a href="{{ post.soundcloud_direct_url }}" target="_blank" class="btn btn-soundcloud btn-sm">SoundCloud</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

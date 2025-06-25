@@ -728,3 +728,61 @@ footer {
         padding: 1rem;
     }
 }
+/* SoundCloud Player Styles */
+.soundcloud-player, .mini-player {
+    margin: 2rem 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+}
+
+.soundcloud-player iframe, .mini-player iframe {
+    border-radius: var(--border-radius);
+    background: var(--bg-secondary);
+}
+
+/* SoundCloud Button */
+.btn-soundcloud {
+    background: linear-gradient(45deg, #ff5500, #ff7700);
+    color: white;
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-soundcloud:hover {
+    background: linear-gradient(45deg, #ff3300, #ff5500);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
+}
+
+.btn-soundcloud:before {
+    content: "🎵 ";
+}
+
+/* Episode Actions Styling */
+.episode-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.episode-actions .btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .episode-actions {
+        flex-direction: column;
+    }
+    
+    .episode-actions .btn {
+        width: 100%;
+    }
+    
+    .soundcloud-player iframe, .mini-player iframe {
+        height: 140px;
+    }
+}

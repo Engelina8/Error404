@@ -10,7 +10,7 @@ title: Home
         <p>Cybersecurity insights for the digital age</p>
         <div class="hero-buttons">
             <a href="#latest" class="btn btn-primary">Listen Now</a>
-            <a href="/about/" class="btn btn-secondary">About Us</a>
+            <a href="{{ '/about/' | relative_url }}" class="btn btn-secondary">About Us</a>
         </div>
     </div>
 </section>

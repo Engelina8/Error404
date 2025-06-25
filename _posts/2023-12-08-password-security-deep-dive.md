@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "Password Security Deep Dive"
-episode_number: 2
-duration: "32:45"
-audio_file: "/assets/audio/episode-002.mp3"
-description: "Everything you need to know about creating, managing, and protecting your passwords in 2023."
-tags: [passwords, authentication, security]
+title: "Welcome to Cybersecurity Basics"
+episode_number: 1
+duration: "25:30"
+soundcloud_url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/YOUR_TRACK_ID_HERE"
+soundcloud_direct_url: "https://soundcloud.com/your-username/welcome-to-cybersecurity-basics"
+description: "Welcome to our cybersecurity podcast! In this first episode, we introduce ourselves and discuss why cybersecurity matters for everyone."
+tags: [introduction, basics]
 ---
+
 
 # Password Security in 2023
 
