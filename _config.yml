@@ -1,7 +1,6 @@
 title: "Your Cybersecurity Podcast"
 description: "Exploring cybersecurity topics for everyone"
-url: "http://localhost:4000" # Change this for production
-baseurl: ""
+theme: minima
 
 # Build settings
 markdown: kramdown
