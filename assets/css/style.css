@@ -952,3 +952,177 @@ footer {
         padding: 1rem;
     }
 }
+/* Transcript Styles */
+.episode-transcripts {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.episode-transcripts h3 {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.language-selector {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.language-selector label {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.language-dropdown {
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 150px;
+}
+
+.language-dropdown:hover {
+    border-color: var(--primary-color);
+}
+
+.language-dropdown:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+}
+
+.transcript-container {
+    position: relative;
+}
+
+.transcript-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.transcript-text {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-height: 400px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.transcript-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.transcript-text::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 3px;
+}
+
+.transcript-text::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 3px;
+}
+
+.transcript-text p {
+    margin-bottom: 1rem;
+}
+
+.transcript-text h4 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+/* Transcript expand/collapse button */
+.transcript-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 12px;
+    transition: var(--transition);
+}
+
+.transcript-toggle:hover {
+    background: var(--primary-color);
+    color: var(--bg-primary);
+}
+/* Button ripple effect */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Transcript fade transitions */
+.transcript-content {
+    transition: opacity 0.3s ease;
+}
+
+/* Player loading states */
+.player-placeholder {
+    transition: opacity 0.3s ease;
+}
+
+.player-loaded {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Mobile menu styles */
+.mobile-menu-toggle.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+nav.active {
+    display: block !important;
+}
+
