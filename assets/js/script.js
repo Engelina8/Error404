@@ -109,57 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ====================================
-    // SOUNDCLOUD CLICK-TO-LOAD FUNCTIONALITY
-    // ====================================
-    const loadPlayerButtons = document.querySelectorAll('.load-player-btn');
     
-    loadPlayerButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const soundcloudUrl = this.getAttribute('data-soundcloud-url');
-            const targetId = this.getAttribute('data-target');
-            const playerContainer = document.getElementById(targetId);
-            
-            if (soundcloudUrl && playerContainer) {
-                // Show loading state
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading Player...';
-                this.disabled = true;
-                this.style.opacity = '0.7';
-                
-                // Create iframe
-                const iframe = document.createElement('iframe');
-                iframe.width = '100%';
-                iframe.height = '200';
-                iframe.scrolling = 'no';
-                iframe.frameBorder = 'no';
-                iframe.allow = 'autoplay';
-                iframe.src = soundcloudUrl + '&color=%2300d4ff&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false';
-                
-                // Fade out placeholder
-                playerContainer.style.transition = 'opacity 0.3s ease';
-                playerContainer.style.opacity = '0.3';
-                
-                setTimeout(() => {
-                    // Replace content
-                    playerContainer.innerHTML = '';
-                    playerContainer.appendChild(iframe);
-                    playerContainer.classList.add('player-loaded');
-                    
-                    // Fade in new player
-                    iframe.onload = function() {
-                        playerContainer.style.opacity = '1';
-                    };
-                    
-                    // Hide the load button after successful load
-                    setTimeout(() => {
-                        button.style.display = 'none';
-                    }, 500);
-                    
-                }, 300);
-            }
-        });
-    });
 
     // ====================================
     // ADDITIONAL UTILITY FUNCTIONS
