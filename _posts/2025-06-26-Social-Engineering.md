@@ -2,7 +2,7 @@
 layout: post
 title: "Episode 1: Social Engineering"
 episode_number: 1
-duration: "29:30"
+duration: "28:57"
 description: "Welcome to the first official episode of the '404: Security not Found' podcast! In this episode, we'll introduce you to what Social Engineering is, how to recognise it and how to react, should you ever fall prey to these tactics."
 soundcloud_url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2120024622&color=%2316d47b&auto_play=false&hide_related=true&show_comments=true&show_user=false&show_reposts=false&show_teaser=false"
 soundcloud_direct_url: "https://soundcloud.com/security-not-found/episode1"
