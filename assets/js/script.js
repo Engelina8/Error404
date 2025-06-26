@@ -108,8 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 350);
         });
     }
-    
-    
 
     // ====================================
     // ADDITIONAL UTILITY FUNCTIONS
@@ -185,5 +183,4 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🎵 SecureCast JavaScript loaded successfully!');
     console.log('📻 Audio player:', audioPlayer ? 'Found' : 'Not found');
     console.log('🌐 Language selector:', languageSelector ? 'Found' : 'Not found');
-    console.log('🎯 SoundCloud buttons:', loadPlayerButtons.length + ' found');
 });
