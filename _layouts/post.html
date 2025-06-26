@@ -18,6 +18,29 @@ layout: default
             </div>
         </div>
 
+        <!-- SoundCloud Player (Direct Load) -->
+        {% if page.soundcloud_url %}
+        <div class="episode-player soundcloud-player">
+            <iframe 
+                width="100%" 
+                height="200" 
+                scrolling="no" 
+                frameborder="no" 
+                src="{{ page.soundcloud_url }}&color=%2300d4ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+            </iframe>
+        </div>
+        {% elsif page.soundcloud_track_id %}
+        <div class="episode-player soundcloud-player">
+            <iframe 
+                width="100%" 
+                height="200" 
+                scrolling="no" 
+                frameborder="no" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.soundcloud_track_id }}&color=%2300d4ff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+            </iframe>
+        </div>
+        {% endif %}
+
         <!-- Episode Description -->
         {% if page.description %}
         <div class="episode-description">
@@ -26,96 +49,78 @@ layout: default
         </div>
         {% endif %}
 
-        <!-- Episode Content -->
-        <div class="episode-content">
-            {{ content }}
-        </div>
-
-        <!-- Multi-Language Transcripts -->
-        {% if page.transcripts and page.transcripts.size > 0 %}
-        <div class="episode-transcripts">
-            <h3>Episode Transcript</h3>
-            
-            <!-- Language Selector -->
-            {% if page.transcripts.size > 1 %}
-            <div class="language-selector">
-                <label for="transcript-language">Choose Language:</label>
-                <select id="transcript-language" class="language-dropdown">
-                    {% for transcript_lang in page.transcripts %}
-                        <option value="{{ transcript_lang[0] }}" 
-                                {% if transcript_lang[0] == page.default_transcript_language or (page.default_transcript_language == null and forloop.first) %}selected{% endif %}>
-                            {{ transcript_lang[0] | upcase }}
-                            {% case transcript_lang[0] %}
-                                {% when 'en' %} - English
-                                {% when 'es' %} - Español
-                                {% when 'fr' %} - Français
-                                {% when 'de' %} - Deutsch
-                                {% when 'it' %} - Italiano
-                                {% when 'pt' %} - Português
-                                {% when 'ru' %} - Русский
-                                {% when 'zh' %} - 中文
-                                {% when 'ja' %} - 日本語
-                                {% when 'ar' %} - العربية
-                            {% endcase %}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
-            {% endif %}
-
-            <!-- Transcript Content -->
-            <div class="transcript-container">
-                {% for transcript_lang in page.transcripts %}
-                <div class="transcript-content" 
-                     id="transcript-{{ transcript_lang[0] }}" 
-                     {% unless transcript_lang[0] == page.default_transcript_language or (page.default_transcript_language == null and forloop.first) %}style="display: none;"{% endunless %}>
-                    <div class="transcript-text">
-                        {{ transcript_lang[1] | markdownify }}
-                    </div>
+        <!-- Transcript Section -->
+        {% if page.transcripts %}
+        <div class="transcript-section">
+            <div class="transcript-header">
+                <h3>Episode Transcript</h3>
+                <div class="transcript-controls">
+                    <select id="transcript-language" class="transcript-language-selector">
+                        {% for transcript in page.transcripts %}
+                            {% if transcript[0] == page.default_transcript_language %}
+                                <option value="{{ transcript[0] }}" selected>
+                                    {% case transcript[0] %}
+                                        {% when 'en' %}English
+                                        {% when 'es' %}Español
+                                        {% when 'fr' %}Français
+                                        {% when 'de' %}Deutsch
+                                        {% when 'pt' %}Português
+                                        {% else %}{{ transcript[0] | upcase }}
+                                    {% endcase %}
+                                </option>
+                            {% else %}
+                                <option value="{{ transcript[0] }}">
+                                    {% case transcript[0] %}
+                                        {% when 'en' %}English
+                                        {% when 'es' %}Español
+                                        {% when 'fr' %}Français
+                                        {% when 'de' %}Deutsch
+                                        {% when 'pt' %}Português
+                                        {% else %}{{ transcript[0] | upcase }}
+                                    {% endcase %}
+                                </option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
                 </div>
+            </div>
+            
+            <div class="transcript-content-wrapper">
+                {% for transcript in page.transcripts %}
+                    <div id="transcript-{{ transcript[0] }}" class="transcript-content" 
+                         {% unless transcript[0] == page.default_transcript_language %}style="display: none;"{% endunless %}>
+                        {{ transcript[1] | markdownify }}
+                    </div>
                 {% endfor %}
             </div>
         </div>
         {% endif %}
 
-        <!-- Action Buttons -->
-        <div class="episode-actions">
-            {% if page.soundcloud_direct_url %}
-            <a href="{{ page.soundcloud_direct_url }}" target="_blank" class="btn btn-soundcloud">
-                <i class="fab fa-soundcloud"></i> Listen on SoundCloud
-            </a>
-            {% endif %}
-            
-            <a href="{{ '/episodes/' | relative_url }}" class="btn btn-secondary">
-                <i class="fas fa-list"></i> All Episodes
-            </a>
+        <!-- Episode Content -->
+        <div class="episode-content">
+            {{ content }}
         </div>
 
-        <!-- Tags -->
-        {% if page.tags and page.tags.size > 0 %}
-        <div class="episode-tags">
-            <h3>Tags</h3>
-            <div class="tags-list">
-                {% for tag in page.tags %}
-                <span class="tag">{{ tag }}</span>
-                {% endfor %}
-            </div>
+        <!-- SoundCloud Direct Link -->
+        {% if page.soundcloud_direct_url %}
+        <div class="episode-links">
+            <a href="{{ page.soundcloud_direct_url }}" target="_blank" class="btn btn-soundcloud">
+                🎵 Listen on SoundCloud
+            </a>
         </div>
         {% endif %}
 
         <!-- Episode Navigation -->
         <div class="episode-navigation">
             {% if page.previous.url %}
-            <a href="{{ page.previous.url | relative_url }}" class="nav-previous">
-                <i class="fas fa-chevron-left"></i> Previous Episode
-                <span>{{ page.previous.title }}</span>
+            <a href="{{ page.previous.url }}" class="nav-previous">
+                ← Previous Episode: {{ page.previous.title }}
             </a>
             {% endif %}
             
             {% if page.next.url %}
-            <a href="{{ page.next.url | relative_url }}" class="nav-next">
-                <span>{{ page.next.title }}</span>
-                Next Episode <i class="fas fa-chevron-right"></i>
+            <a href="{{ page.next.url }}" class="nav-next">
+                Next Episode: {{ page.next.title }} →
             </a>
             {% endif %}
         </div>
