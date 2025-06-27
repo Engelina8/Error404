@@ -1150,3 +1150,85 @@ nav.active {
     display: block !important;
 }
 
+/* Transcript Language Selector Styles */
+.transcript-language-selector {
+    background: #2a2a2a !important;  /* Force dark background */
+    border: 2px solid #444 !important;
+    color: #ffffff !important;  /* Force white text */
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius, 8px);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.transcript-language-selector:hover {
+    border-color: var(--primary-color) !important;
+    background: #333333 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.transcript-language-selector:focus {
+    outline: none !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.3) !important;
+    background: #333333 !important;
+}
+
+/* Force styling on dropdown options */
+.transcript-language-selector option {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    padding: 0.5rem;
+}
+
+.transcript-language-selector option:hover,
+.transcript-language-selector option:checked {
+    background: var(--primary-color) !important;
+    color: #000000 !important;
+}
+
+/* Also keep your existing .language-dropdown styles for compatibility */
+.language-dropdown,
+.language-selector select {
+    background: #2a2a2a !important;
+    border: 2px solid #444 !important;
+    color: #ffffff !important;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius, 8px);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.language-dropdown:hover,
+.language-selector select:hover {
+    border-color: var(--primary-color) !important;
+    background: #333333 !important;
+}
+
+.language-dropdown:focus,
+.language-selector select:focus {
+    outline: none !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.3) !important;
+    background: #333333 !important;
+}
+
+.language-dropdown option,
+.language-selector select option {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    padding: 0.5rem;
+}
