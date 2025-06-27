@@ -8,12 +8,16 @@ soundcloud_url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.c
 soundcloud_direct_url: "https://soundcloud.com/security-not-found/episode1"
 transcripts:
   en: |
+  
     Engi: 
       Hi everyone, I'm Engi
+      
     Josh: 
       I'm Josh
+      
     Tom:  
       I'm Tom
+      
     Engi: 
       And this is 404: Security not found. Welcome to our very first official episode. So, I'd say we get right into it, if everyone's ready.
     Josh: 
