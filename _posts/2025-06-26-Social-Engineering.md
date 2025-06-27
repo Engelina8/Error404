@@ -567,13 +567,13 @@ transcripts:
     **Josh:** Au revoir !
 
 default_transcript_language: en
-
-resources:
-  - title: "View Characters Tool"
-    url: "https://www.soscisurvey.de/tools/view-chars.php"
-    description: "Check what characters are actually being used in text"
-  - title: "NordVPN Link Checker"
-    url: "https://nordvpn.com/link-checker/"
-    description: "Verify if links are safe before clicking"
 ---
 
+# Welcome to Episode 1
+
+## Resources
+
+View what characters are being used in a sentence: https://www.soscisurvey.de/tools/view-chars.php
+
+Link checker:
+https://nordvpn.com/link-checker/
