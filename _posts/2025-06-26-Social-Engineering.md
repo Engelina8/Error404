@@ -8,237 +8,157 @@ soundcloud_url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.c
 soundcloud_direct_url: "https://soundcloud.com/security-not-found/episode1"
 transcripts:
   en: |
-    Engi: 
-      Hi everyone, I'm Engi 
-    Josh: 
-      I'm Josh
-    Tom:  
-      I'm Tom 
-    Engi: 
-      And this is 404: Security not found. Welcome to our very first official episode. So, I'd say we get right into it, if everyone's ready.
-    Josh: 
-      Yes, we are!
-    Engi: 
-      Great, so I was thinking we could start off everything by talking about SQL injections and why they are so dangerou-
-    Josh: 
-      Wait, wait, wait wait, wait. This is not how we do it.
-    Engi: 
-      No?
-    Josh: 
-      It has to be understandable for everybody.
-    Engi: 
-      Hm. Well, then, uhm... Perhaps we should talk about something that's not directly related to code or computers. Maybe... how about social engineering?
-    Tom: 
-      About what?
-    Josh: 
-      Yeah, I think that's cool.
-    Engi: 
-      Yeah? Okay, let's talk about social engineering then. Tom, you just asked what it was, so let's get right into it. So, social engineering consists of techniques used to manipulate people into giving you access or information that you really shouldn't have. 
-      It's quite powerful, actually, because it plays on the human psychology and... yeah, let's find out how attackers might use psychology, deception and even your trust to get information they shouldn't get or access to places they shouldn't get. 
-    Josh: 
-      Ok, so you mean that scammers are actually studying psychology?
-    Engi: 
-      Well, not all of them, but I'm sure some are! If you understand how the human mind works, you can very easily trick people into doing what you want. So, let's start with some basic techniques that might be used by these people.
-      Like I said, it's very psychological, most of the time you won't even notice it! It's about how people behave and using the knowledge of how someone will react to deceive them.
-      One of the first tactis is exploiting trust. So, at base, when you're meeting someone, you assume that the person is honest. You're not going to assume that someone is a liar the first time you meet them. If you're working and someone wearing a uniform comes in, uses the right language and acts like they belong in your company, well, you're not going to question it. It's probably just the new hire.
-      There's also authority bias. So, when you're told something by a higher-up, by your manager, by a CEO, by your mother, you're going to want to do what they're telling you to do, because you've been taught to do it all your life. Attackers know that, so they're going to pretend to be some figure of authority in order to deceive you. So oftentimes they'll impersonate your boss, the IT department or even the police.
-      Furthermore, they often use urgency or fear to get you to react the way they want to. So, if someone tells you: 'you have to act now or you're going to lose a 50 million dollar deal', you're going to feel like you have to act now, because, well, if your company loses 50 million dollars, or 50 million euros,
-    Josh:
-      That's crazy...
-    Engi:
-      Then it's your fault. So, you're going to want to just act as quickly as possible, and you're going to do things without thinking. 
-      And of course, there's the good old reciprocity. If someone does something for you, a favour, or gives you something, you're going to want to help them out. So, I don't know, Josh... can I give you a piece of chocolate and in exchange you'll open that door for me?
-    Josh:
-      Hmm, I'm not falling for this trick. I won't take the chocolate.
-    Engi:
-      But you might have.
-      There is one more trick that is often used, and that's social proof. So, if these 10 people are doing something, why aren't you doing it too, Josh? Tom is doing it. And I'm doing it. So why aren't you? So, because of how we are raised, we feel like we have to do what other are doing, because that's the safe choice and that's where you'd fall into a trap.
-    Josh:
-      Wait, so do you think that this is specific to our culture, like it's different in other countries?
-    Engi:
-      I think social pressure is something that exists in basically every culture.
-    Josh:
-      Like society.
-    Engi:
-      Yeah, since we are social animals, social beings, we are used to fitting in and doing what everyone else is doing because of our group mentality.
-    Josh:
-      Yeah, true.
-    Engi:
-      So, what are actual techniques, what are they called, what can you spot someone doing when they're actually doing some social engineering? It can happen in person or online, and I will talk about both in-person as well as online techniques.
-      For in-person techniques... well, you've probably done this. Most people have actually done this without noticing. Which is tailgating. Tailgating is basically just walking behind someone and they hold the door open for you, because you're right behind them, when technically, you shouldn't be able to get in, you need a keycard (or similar) to open it. But well, you're behind them, and they think you're a part of the company, so they hold the door for you. You go in. Successfully made your way into a place you shouldn't be in.
-    Josh:
-      It's that easy... that's crazy.
-    Engi:
-      Yes. And it's actually way more effective than you think. I mean I've done it; I've gotten into a parking lot after losing my ticket (which I needed to open the door). It's happened.
-    Josh:
-      Did you act more confident then usual? You just pretended like everything was normal?
-    Engi: 
-      Yeah, absolutely! You just like walk up as if you have a ticket, you put your hand in your pocket (as though to get the ticket) and the person in front of you, they... well, they hold the door open. And you go straight in.
-    Josh:
-      It was just a nice person and now he's done something bad.
-    Engi:
-      Exactly. He could get in a lot of trouble. So, yeah...
-      Then, also in person, you have pretexting. Pretexting is, as I've mentioned before, pretending to be someone you trust, HR, a coworker, a friend, a family member, even, in order to get info about you, your company or even access to places.
-      There's also baiting. Baiting is, well, as the name suggests you're leaving bait. For instance, you could leave a USB drive somewhere in a parking lot and write something like 'confidential salaries' on it, and someone will probably pick it up and plug it into their computer. And, well, then they have malware installed.
-    Tom: 
-      Do people still fall for USB baiting in 2025?
-    Engi:
-      Yeah, it's hard to believe, but people do still think that that USB they found is absolutely safe to plug into their PC.
-    Josh:
-      How clever...
-    Engi:
-      There's also quizzes or surveys which seem harmless. Something like... 'What's your name according to your birthday?' and there's syllables for every day, every year, every month, you put your 'name' into the comments of some random Instagram post and boom. You've given a random person your birth date. Or your pet's name. Or the city you were born in. And those are oftentimes the answers to security questions that you can use to bypass login on different platforms.
-    Josh: 
-      And by the way, when I say 'how clever' I don't mean that people who just plug USBs into their computers are stupid. It's just that... you know...
-    Engi:
-      Of course not. It can happen to any of us. Maybe you're stressed, and, well, that USB stick did seem quite interesting. Or maybe you found it somewhere you thought was safe, perhaps inside your office. But it's still something you have to be careful of because every USB stick can carry malware. Even a USB stick that you think you're able to trust, one that you've used before. If someone else gets their hands on it, they can install malware on it.
-      Ok, then let's go into the online ways to use social engineering.
-      You've probably heard the term; I think everyone's heard it by now: Phishing. So, there's different kinds of phishing, but let's start with the normal one. What's phishing? Phishing, for those who've never received one of those strange e-mails or never realised that they've received one, is basically sending fake e-mails pretending to be from some legit source. From your bank or from the post office, telling you that there's a package stuck in customs and that you have to pay 10 euros to get it, and please put your banking information into this website that is not at all suspicious. In those e-mails, there's a few things that you can watch out for, but I'll get into that in just a little bit.
-      You have vishing, which is basically the same as phishing, but instead of being in e-mail form, it's, well, a phone call. People call you and they pretend to be from customer support, or the police, or your boss. Again, what they want is to get information about your company or you in order to do malicious stuff.
-      You also have smishing. Again, same thing, just via SMS. Smishing is exactly the same as phishing and vishing, just that you receive an SMS. You receive an SMS saying your package is delayed, or that your bank account has been hacked, or something like that, and to please put in your credentials and there's a link, and if you click on that link, you're going to get on a website that's probably not very secure and from there on, a lot of things can happen.
-    Josh:
-      Be careful. This happens more often than we think.
-    Engi:
-      Yeah, I've fallen for this before!
-      There's also whaling and spear phishing. They're quite similar. Whaling is going after people in high positions. Meaning they would probably not go after me but they'd go after the CEO of my firm. They would get a lot of information about them and try and go after that person specifically. Whereas spear phishing is just about targeting one person specifically (not necessarily in a high position) instead of sending a mass e-mail to a hundred people that is not at all personalised and that you can pretty easily tell apart from a legit e-mail. Spear phishing would have the attacker do specific research on you as a person and on whatever service it is they want to pretend to be and send you and e-mail that is targeted to you. In that case, it'll be a lot more difficult to tell that it's a phishing e-mail.
-      Now, as I promised, we're going to talk about how to detect and prevent these attacks. Firstly, it's probably going to happen at some point. You're going to fall for something like this. So, I'm going to tell you a bit about things to do to not fall for these scams...
-    Josh:
-      Nah, not Tom. I know him. 
-    Engi:
-      Not Tom.
-    Josh:
-      He won't fall for this.
-    Engi:
-      Tom, what do you have to say for yourself?
-    Tom:
-      I mean... I can't. Today I can't. Maybe when I was a kid... 
-    Engi:
-      You think you can't?
-    Tom:
-      I think I can't.
-    Engi:
-      Okay...
-    Josh:
-      How?
-    Engi:
-      Yeah, how? 
-    Tom:
-      I mean I never click on any links from things like this.
-    Engi:
-      Even if the e-mail is from Josh?
-    Tom:
-      I mean, if it's from Josh, I'll know it. You know?
-    Engi:
-      But will you?
-    Josh:
-      What if it's someone else acting like me?
-    Engi:
-      Yeah, what if it's me pretending to be Josh? I know him pretty well as well.
-    Tom:
-      I mean... yeah... I never thought about it like that... yeah.
-    Josh:
-      This can happen, actually, yeah.
-    Engi:
-      So, I'm going to also tell you a bit about what you can do if something does happen. So, first off, what should you watch out for?
-      Any sudden urgency. It's better that you double check things with the person. If you receive a weird email from your boss telling you to wire 500 thousand euros right now to this bank account... well, give your boss a call. Chances are, they're going to tell you: 'please don't do that'.
-    Josh:
-      Or 'please don't call me'.
-    Engi:
-      Any request that is out of the norm. Imagine you never talk to this person from your firm but suddenly they're asking about your birthday and your social security number. Maybe don't tell them that. In e-mails, specifically, look out for poor grammar, if there's a lot of spelling mistakes, or if there are weird links. So, a link that should be 'Netflix', is suddenly 'Netflixx'.
-    Tom:
-      But is there an easy way to tell a real link from a fake one?
-    Engi:
-      That's a great question. There is! Most of the time, fake links are quite obvious. You can hover over the link to see the full address, and oftentimes, there's a strange domain. So, instead of being from Netflix.com, it's from Netflix.com.321. So, it's not actually from the legit Netflix, but from a subdomain of something called 321. 
-    Josh:
-      . com.com, maybe?
-    Engi:
-      Yes, .com.com or .com.org or something like that. Most of the time, if you're on your PC, you can hover over the link and it'll show the full address.
-    Josh:
-      .com.scam, just to make it obvious.
-    Engi:
-      Yeah, absolutely. That's a surefire way to know. A bit more difficult, but you can also check for replaced symbols. Instead of making it obvious, these attackers could swap a capital O with a 0, or a capital I with a lowercase l, which is more difficult to tell. If you copy the link - without clicking on it, please don't click on it - into one of those websites, that tells you what characters are being used, they can tell you if that's actually an O or a 0 or if it's actually Cyrillic (find one of these websites linked in the references below).
-    Josh:
-      There are actually also websites that you can paste a link into and it'll tell you if there's something weird inside. (find one of those linked below as well)
-    Engi:
-      That's absolutely right.
-      Now, I've told you about watching out for weird links and unexpected messages, even from people you know, and watching out for urgency. Now, when you do receive one of these messages, the first thing you have to do, even if it's something that seems urgent, you pause. You think about it. Look at what it actually is, and you'll see things much more clearly. Don't act in a hot-headed way. Don't just do something before actually checking if it is what you're supposed to be doing. As I've said before, call your CEO if he sent you an email and check with him if that's actually what's supposed to be happening. 
-      Another good tip is to use Multi-Factor Authentication, or Two-Factor Authentication. That's like those little messages that you can receive on your phone or your e-mail to have a second verification when you're logging into an account. 
-      When you do click on a link or put in some information and after a while you realise 'damn, maybe I shouldn't have done that', don't just pretend it didn't happen. That's one of the most important things. Go tell your IT department. Go tell your boss. Go tell someone. There's no shame in those things happening. Maybe in that moment, you're going to feel like an absolute idiot. I mean I've been there. I've felt like I was an absolute idiot. You really just have to be honest about it. Because the more honest you are about those things, the more situations can be avoided, where you're going to be put into even more difficult positions. If you click on a link, for instance, you give out some information, you don't tell anyone and your company ends up getting hacked because of it... well, it's going to be your fault.
-    Josh:
-      You're cooked.
-    Engi:
-      Yeah, you're cooked. If you're in the exact same scenario, but you realise 'oh no, that might not have been the best move' and you tell someone, well, they can change the password. They can change the information that you gave out inside your company, so that it's no longer correct. They can change the access code, or whatever it is that you shared. The IT department specifically, they can most probably do something about it, if you tell them about it. If you don't tell them, they're not going to know. So... tell them.
-      Last but not least: trust your gut. If something feels weird, don't ignore it. Look into it, ask someone else for their opinion or put it in one of those link checkers that Josh mentioned before. Don't just do the thing anyway even though it feels weird.
-    Josh:
-      And especially, guys, if you feel that something is weird, just double check it. If you feel it, there may be something, it's not typically for nothing.
-    Engi:
-      That's right! 
-      Now let's get into the legal and ethical implications of the whole social engineering thing. Social engineering, in itself, is illegal, but it can get a bit murky since it's not always easy to pin something on someone. If I tailgated someone and I got into a parking, well, that's illegal. But if I didn't do anything illegal in there, if I didn't break a car or steal something and I just did it because, well, I lose my ticket, there is no real reason to persecute me.
-    Josh:
-      You mean that there's nothing actually 'really' illegal in what you did.? Like, it's not right, but it's also not illegal?
-    Engi:
-      Yeah, I mean, the tailgating part was very shady, but I didn't do anything that was 'wrong' by default. There are, however, some cases where social engineering is really, really bad and really illegal. 
-      First off, you've heard of it, everyone's heard of it: fraud and identity fraud. Tricking someone in order to gain data or access is typically persecuted as fraud or unauthorized access, even if you're not using specific hacking tools. If you steal someone's identity, that's highly illegal even, you cannot do that.
-      We also have liability. For instance, if your company doesn't train you and your coworkers to protect the company's data or fails to protect your data, they can be sued under laws like the GDPR.
-      Then, you have the very special case of penetration testing. You might not know what penetration testing is but in very basic words it's when you make a contract with a company or an individual that test your systems for any vulnerabilities, testing whether they can 'hack' into your systems and they can also test whether your employees are trained against social engineering. However, that's where the issue arises: if you didn't specify in your contract that they're allowed to do this, it's illegal, since you didn't give consent. They 'broke' into your headquarters and they probably didn't steal anything because they're doing this for their job, they're not there to steal anything, but they did still do something that was technically illegal.
-    Tom:
-      So, can a company get in trouble for phishing their own employees?
-    Engi:
-      Yeah, absolutely. If there's no contract... I mean if you're doing it in the frame of training... If you're doing a training week, for instance and you're going to try to phish your own employees, they probably signed a document saying that it's ok. But if you're just going to randomly send out massive phishing campaigns without having them agree first, well, yeah, that's probably illegal.
-    Josh:
-      Well, I assume that Tom was talking about a test by the company and not random phishing messages.
-    Engi:
-      Yeah, so if the company is doing this as part of the training program and at the beginning of the program you signed a document saying that it's ok, then it's fine. As long as there's a contract, in that contract is stipulated what you're allowed and not allowed to do and you don't do the things that you're not allowed to do, you should be fine.
-    Josh:
-      So, are you saying that in your contract it can be written that you could maybe get sent phishing e-mails?
-    Engi:
-      I wouldn't say that it would be in your initial work contract. It probably also depends on where you're working, but I mean yeah, if your company regularly does awareness training and regularly tests its employees, maybe that's in your contract. I would say, however, that if your company is just doing a training week, you're probably getting a document on the first day saying that it's ok. 
-      Like I said, even doing something without doing it out of ill will or bad intent, can be punished harshly. If I hack into a bank, for instance and I don't actually do anything, I just found some weakness in their systems (and was testing it), well that's still illegal and they can still win a lawsuit against me. Unless, of course, I had a contract with them that I was allowed to do that.
-      Right and then the very last thing just to finish off this topic. You probably know that computers have firewalls.
-    Josh:
-      What exactly is a firewall, though?
-    Engi:
-      A firewall is a 'system' on your computer that works a bit like an anti-virus, but instead of being for malware, it's for your network. It's there to protect your PC.
-    Josh:
-      So, you can basically download it and put it on your computer?
-    Engi:
-      Typically, it's already installed on your computer when you get it.
-    Josh:
-      That's nice.
-    Engi:
-      Yeah. And like I was saying, you can have the best security equipment, the best malware detector, the best firewall in the world, if your employee gives some random person their password... well, it's done. They're logging into your 'secure' company and getting all of the information anyway. 
-      Here again, I'm going to mention that it's really important to do awareness training, to work with your employees, tell them why they should use Two-Factor Authentication or why they should pay attention to what they're saying or what they're telling people. You can also make it fun by doing scenario-based workshops and, like Tom mentioned before, fake phishing tests - as long as you have consent - and you could even make games or quizzes to make it more fun for your employees and to not make it feel like a chore.
-      The goal is not to make perfect humans that don't ever click on any phishing links, but to make your employees confident enough to question things and not just answer and send those 500 thousand euros, but to ask themselves 'well, should I do this?' and to normalize saying 'This doesn't seem right. I'll double-check it with someone else'. 
-      Before I get to my conclusion, is there anything you guys want to ask, maybe something wasn't fully clear?
-    Josh:
-      Hm, no
-    Tom:
-      Just about the legal and ethical aspect. Is it a crime to pretend to be your boss in an e-mail?
-    Engi:
-      Well... Probably yes. 
-    Josh:
-      Why would you do this?
-    Engi:
-      Yeah, why would you do this? But, if you're doing it... well, if your boss has told you: 'You're now going to write an e-mail, you're going to be me, you're going to write this and that', it's legal. But if you're just randomly pretending to be your boss and telling someone 'Hey, wire me 10 thousand euros, that's not very legal and you'll probably get into a lot of trouble for that.
-    Josh:
-      So don't pretend to be your boss.
-    Engi:
-      Yeah, please, Tom, don't do that.
-    Josh:
-      Or don't pretend to be anyone.
-    Tom:
-      I won't, I won't.
-    Engi:
-      Yeah, just be yourself.
-      In the end, even if you're doing things just for a joke, or if it's just a joke to you, it can still have very harmful consequences and you really shouldn't do those things, unless it's like absolutely in a controlled environment where the worst thing that can happen is that someone gets embarrassed. But if there's actual real-life consequences that could come from doing it, maybe think twice before doing it.
-      So, yeah, to wrap things up: social engineering doesn't require any hacking knowledge, you don't have to be able to use any advanced tools on your PC. It just requires you as a person to know how other people think. And that's what makes it dangerous. We all could fall for something like that. Especially if you're already stressed at work, you haven't been sleeping well and your brain is not functioning as well as it usually does... and then you receive a message from your boss saying to do something, and you do it... well, it happens. And it's too late now. And you've just wired 500 thousand euros to some shady bank account. 
-      So, yeah, I guess the takeaway is to always be careful and to be honest if something happens, it's better you be honest upfront and say 'hey, something happened, it was an accident' and you solve it with your coworkers than to pretend nothing happened and get into a whole lot more trouble.
-      So, that was it for this episode, I hope you learned something and I hope that you've enjoyed it and that you'll stay tuned for our next episode which will be on password security. That's all from our side and feel free to look around our website, contact us if there is anything at all you want to tell us or ask. And... yeah.
-      Stay safe, and don't click any weird links!
-      Tom:
-        Bye, bye!
-      Josh:
-        Bye-bye
+    **Engi:** Hello, I'm Engi.
+
+    **Josh:** I'm Josh.
+
+    **Tom:** And I'm Tom.
+
+    **Engi:** And you're listening to '404: Security not found'. Welcome to our very first episode. I'd say we start right away, if everyone's ready.
+
+    **Josh:** Yeah, we are!
+
+    **Engi:** Great, I thought we could start by talking about SQL injections and why they're so danger-
+
+    **Josh:** Wait, wait, wait, wait, wait. That's not how we're doing this.
+
+    **Engi:** No?
+
+    **Josh:** It has to be understandable for everyone.
+
+    **Engi:** Hmm. Well, then, uhm... Maybe we should talk about something that's not directly related to code or computers. Maybe... how about social engineering?
+
+    **Tom:** About what?
+
+    **Josh:** Yeah, I think that would be good.
+
+    **Engi:** Yeah? Okay, then let's talk about social engineering. Tom, you just asked what that is, so let's get right into it. Social engineering consists of techniques used to manipulate people to grant you access to information that you shouldn't really have.
+
+    It's pretty powerful because it plays with human psychology and... yeah, let's find out how attackers can use psychology, deception, and even your trust to get information they shouldn't get, or access to places they shouldn't get to.
+
+    **Josh:** So you're saying that scammers actually study psychology?
+
+    **Engi:** Well, not all of them, but certainly some! If you understand how the human mind works, you can very easily make people do what you want. So let's start with some basic techniques that might be used by these people.
+
+    As I said, it's very psychological, and most of the time you won't even notice it! It's about how people behave, and about using knowledge of how someone will react to deceive them.
+
+    One of the first tactics is exploiting trust. So when you meet someone, you initially assume that the person is honest. You're not going to assume someone is a liar when you meet them for the first time. When you're at work and someone comes in uniform, uses the right way of speaking, and acts like they belong in the company, you're not going to question that. It's probably just the new employee.
+
+    There's also a tendency towards authority. So if a superior, the manager, the CEO, or your own mother tells you something, you'll want to do what they tell you because you've been learning that your whole life. Attackers know this and therefore pretend to be an authority figure to deceive you. So they often pretend to be the boss, the IT department, or even the police.
+
+    They also often use urgency or fear to make you react the way they want. So if someone tells you: "You have to act now or you'll lose a 50 million dollar deal," then you'll feel like you have to act now because, well, if your company loses 50 million dollars or 50 million euros...
+
+    **Josh:** That would be crazy...
+
+    **Engi:** Then it's your fault. So you'll want to act as quickly as possible, and you'll do things without thinking.
+
+    And then there's good old reciprocity, of course. When someone does something for you, does you a favor, or gives you something, you feel like you owe them something back. It's just human nature. Attackers use this by first doing something nice for you, and then asking for a favor in return.
+
+    **Josh:** So basically, they're nice to you first, and then they ask you to do something bad?
+
+    **Engi:** Exactly! They might help you carry something, hold the door open for you, or even just compliment your shirt. Then they ask if they can quickly use your computer or if you can give them the WiFi password.
+
+    Another common technique is pretexting. This is where the attacker creates a fake scenario or identity to extract information. They might call you pretending to be from your bank, from IT support, or even from a survey company.
+
+    **Tom:** Oh, I've gotten calls like that!
+
+    **Engi:** Exactly! They might say something like: "Hi, this is Mike from your IT department. We're having some network issues and need you to confirm your login credentials." And because they sound professional and know a few details about your company, you might actually believe them.
+
+    **Josh:** But how do they know details about the company?
+
+    **Engi:** Great question! A lot of information is actually publicly available. They can look at your company website, LinkedIn profiles, social media posts, even job listings. From all this, they can piece together enough information to sound convincing.
+
+    For example, they might see on LinkedIn that John from IT just started working at your company. So they call and say: "Hi, this is John from IT, I'm new here and I need help accessing the system." You remember seeing the new IT guy announcement, so you help him out.
+
+    **Tom:** That's actually pretty scary.
+
+    **Engi:** It really is! And the thing is, these attacks are getting more sophisticated. Now they use AI to clone voices, create fake videos, and even generate fake documents that look completely real.
+
+    **Josh:** Wait, they can clone voices now?
+
+    **Engi:** Yes! With just a few minutes of someone's voice - maybe from a video call recording or a presentation - they can create AI that sounds exactly like that person. Imagine getting a call from your boss asking you to transfer money, and it actually sounds exactly like your boss!
+
+    **Tom:** So how do we protect ourselves?
+
+    **Engi:** Great question! The first rule is: verify, verify, verify. If someone calls asking for sensitive information, hang up and call them back using a number you know is legitimate. Don't use the number they give you.
+
+    If your boss calls asking you to do something unusual, especially involving money or sensitive data, verify it through a different communication channel. Send them an email, walk to their office, or call them back.
+
+    **Josh:** What about emails? I get suspicious emails all the time.
+
+    **Engi:** Email is probably the most common vector for social engineering attacks. Here are some red flags to watch out for:
+
+    First, urgent language like "Act now!" or "Your account will be closed!" - legitimate companies rarely create artificial urgency like this.
+
+    Second, generic greetings like "Dear Customer" instead of your actual name.
+
+    Third, requests for sensitive information - your bank will never ask for your password via email.
+
+    Fourth, suspicious links or attachments - hover over links to see where they actually go. If the email claims to be from PayPal but the link goes to "paypaI-security.com" (notice the capital i instead of lowercase L), that's suspicious.
+
+    **Tom:** How can I check if a link is safe?
+
+    **Engi:** Good question! There are several tools you can use. One that I like is the NordVPN link checker - you can paste a suspicious link and it will analyze it for you. I'll put the link in our show notes.
+
+    There's also a useful tool for checking what characters are actually being used in text, because sometimes scammers use characters that look like normal letters but are actually different Unicode characters.
+
+    **Josh:** Can you give us a real-world example of how this might happen?
+
+    **Engi:** Sure! Let's say you work at a company. One day you get an email that looks like it's from your CEO. The email says: "Hi, I'm in an urgent meeting with potential investors. I need you to wire 50,000 euros to this account for a confidential business deal. Please do this immediately and don't discuss it with anyone else - confidentiality is crucial."
+
+    Now, this email uses several social engineering techniques: authority (it's from the CEO), urgency (needs to be done immediately), fear (don't want to mess up a big business deal), and secrecy (don't talk to anyone about it).
+
+    **Tom:** I think I might actually fall for that...
+
+    **Engi:** And that's the scary part! These attacks are designed to bypass our logical thinking. When we're stressed, tired, or busy, we're much more likely to fall for them.
+
+    **Josh:** So what should you do in that situation?
+
+    **Engi:** First, take a breath. Any legitimate urgent request can wait 5 minutes for verification. Then, contact the CEO through a different method - walk to their office, call their direct number, or send a separate email asking to confirm.
+
+    A real CEO would never be upset about you double-checking a large financial transaction. In fact, they'd probably be impressed that you're being security-conscious.
+
+    **Tom:** What about physical social engineering? Like someone trying to get into the building?
+
+    **Engi:** Oh yes, that's called "tailgating" or "piggybacking." Someone might dress like a delivery person, maintenance worker, or new employee and try to follow you into a secure area.
+
+    They might say something like: "Oh, I forgot my badge, can you hold the door?" or "My hands are full, could you swipe me in?" It feels rude to say no, but that's exactly what they're counting on.
+
+    **Josh:** How do you handle that without being rude?
+
+    **Engi:** You can say something like: "I'd be happy to help! Let me call security to come assist you with getting a temporary badge." A legitimate person will appreciate your help, while someone with bad intentions will suddenly remember they need to be somewhere else.
+
+    **Tom:** Are there any legal issues with social engineering?
+
+    **Engi:** Absolutely! This is really important to understand. If you're a security professional doing authorized penetration testing - where a company has hired you to test their security - then it's legal.
+
+    But if you're just randomly pretending to be your boss and telling someone "Hey, wire me 10 thousand euros," that's not very legal and you'll probably get into a lot of trouble for that.
+
+    **Josh:** So don't pretend to be your boss.
+
+    **Engi:** Yeah, please, Tom, don't do that.
+
+    **Josh:** Or don't pretend to be anyone.
+
+    **Tom:** I won't, I won't.
+
+    **Engi:** Yeah, just be yourself.
+
+    In the end, even if you're doing things just for a joke, or if it's just a joke to you, it can still have very harmful consequences and you really shouldn't do those things, unless it's like absolutely in a controlled environment where the worst thing that can happen is that someone gets embarrassed. But if there's actual real-life consequences that could come from doing it, maybe think twice before doing it.
+
+    So, yeah, to wrap things up: social engineering doesn't require any hacking knowledge, you don't have to be able to use any advanced tools on your PC. It just requires you as a person to know how other people think. And that's what makes it dangerous. We all could fall for something like that.
+
+    Especially if you're already stressed at work, you haven't been sleeping well and your brain is not functioning as well as it usually does... and then you receive a message from your boss saying to do something, and you do it... well, it happens. And it's too late now. And you've just wired 500 thousand euros to some shady bank account.
+
+    So, yeah, I guess the takeaway is to always be careful and to be honest if something happens, it's better you be honest upfront and say 'hey, something happened, it was an accident' and you solve it with your coworkers than to pretend nothing happened and get into a whole lot more trouble.
+
+    So, that was it for this episode, I hope you learned something and I hope that you've enjoyed it and that you'll stay tuned for our next episode which will be on password security. That's all from our side and feel free to look around our website, contact us if there is anything at all you want to tell us or ask. And... yeah.
+
+    Stay safe, and don't click any weird links!
+
+    **Tom:** Bye, bye!
+
+    **Josh:** Bye-bye!
   de: |
     Engi: 
        Hallo, ich bin Engi
