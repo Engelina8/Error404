@@ -363,7 +363,7 @@ transcripts:
 
     **Josh:** Tschüss!
     
-fr: |
+  fr: |
     **Engi:** Bonjour, je suis Engi.
 
     **Josh:** Je suis Josh.
