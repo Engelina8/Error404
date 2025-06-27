@@ -6,7 +6,7 @@ title: Home
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">
-        <h1 class="glitch">SecureCast</h1>
+        <h1 class="glitch">404: Security not found</h1>
         <p>Cybersecurity insights for the digital age</p>
         <div class="hero-buttons">
             <a href="#latest" class="btn btn-primary">Listen Now</a>
