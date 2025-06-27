@@ -573,7 +573,6 @@ default_transcript_language: en
 
 ## Resources
 
-View what characters are being used in a sentence: https://www.soscisurvey.de/tools/view-chars.php
+[View what characters are being used in a sentence:] (https://www.soscisurvey.de/tools/view-chars.php)
 
-Link checker:
-https://nordvpn.com/link-checker/
+[Link checker:] (https://nordvpn.com/link-checker/)
