@@ -159,7 +159,8 @@ transcripts:
     **Tom:** Bye, bye!
 
     **Josh:** Bye-bye!
-    de: |
+    
+  de: |
     **Engi:** Hallo, ich bin Engi.
 
     **Josh:** Ich bin Josh.
@@ -361,6 +362,7 @@ transcripts:
     **Tom:** Tschüss!
 
     **Josh:** Tschüss!
+    
    fr: |
     **Engi:** Bonjour, je suis Engi.
 
