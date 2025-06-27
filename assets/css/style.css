@@ -984,45 +984,48 @@ footer {
 }
 
 .language-dropdown {
-    background: var(--bg-secondary);
-    border: 2px solid var(--border-color);
-    color: var(--text-primary);
+    background: #2a2a2a !important;  /* Force dark background */
+    border: 2px solid #444 !important;
+    color: #ffffff !important;  /* Force white text */
     padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius, 8px);
     font-family: 'Roboto Mono', monospace;
     font-size: 14px;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     min-width: 150px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-appearance: none;  /* Remove default styling on webkit browsers */
+    -moz-appearance: none;     /* Remove default styling on Firefox */
+    appearance: none;          /* Remove default styling */
 }
 
 .language-dropdown:hover {
-    border-color: var(--primary-color);
-    background: var(--bg-primary);
+    border-color: #16d47b !important;  /* Your green color */
+    background: #333333 !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .language-dropdown:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(22, 212, 123, 0.3);
-    background: var(--bg-primary);
+    outline: none !important;
+    border-color: #16d47b !important;
+    box-shadow: 0 0 0 3px rgba(22, 212, 123, 0.3) !important;
+    background: #333333 !important;
 }
 
-/* Style the dropdown options */
+/* Force styling on dropdown options */
 .language-dropdown option {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
+    background: #2a2a2a !important;
+    color: #ffffff !important;
     padding: 0.5rem;
 }
 
 .language-dropdown option:hover,
 .language-dropdown option:checked {
-    background: var(--primary-color);
-    color: var(--bg-primary);
+    background: #16d47b !important;
+    color: #000000 !important;
 }
+
 
 
 .transcript-container {
