@@ -984,7 +984,7 @@ footer {
 }
 
 .language-dropdown {
-    background: var(--bg-tertiary);
+    background: var(--bg-secondary);
     border: 2px solid var(--border-color);
     color: var(--text-primary);
     padding: 0.5rem 1rem;
@@ -994,17 +994,36 @@ footer {
     cursor: pointer;
     transition: var(--transition);
     min-width: 150px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .language-dropdown:hover {
     border-color: var(--primary-color);
+    background: var(--bg-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .language-dropdown:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(22, 212, 123, 0.3);
+    background: var(--bg-primary);
 }
+
+/* Style the dropdown options */
+.language-dropdown option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 0.5rem;
+}
+
+.language-dropdown option:hover,
+.language-dropdown option:checked {
+    background: var(--primary-color);
+    color: var(--bg-primary);
+}
+
 
 .transcript-container {
     position: relative;
